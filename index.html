@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Manajemen Penginapan</title>
+    
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">  
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Lembayung Nirwana</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">                 
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cabin">Cabin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="hero text-center text-white d-flex align-items-center" id="home">
+        <div class="container">
+            <h1>Lembayung Nirwana</h1>
+            <p>Tempat singgah bagi jiwa yang mencari ketenangan</p>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container mt-5" id="dashboard">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h5>Total Cabin</h5>
+                        <h2>37</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h5>Cabin Terisi</h5>
+                        <h2>10</h2>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card dashboard-card">
+                    <div class="card-body">
+                        <h5>Cabin Tersedia</h5>
+                        <h2>27</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Daftar Cabin -->
+     <div class="container mt-5" id="cabin">
+        <h3 class="mb-4">Daftar Cabin</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="image-hover">
+                        <img src="assets/Cabin1.1.jpg" class="card-img-top img-first">
+                        <img src="assets/Cabin1.2.jpg" class="card-img-top img-second">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Cabin Riverside </h5>
+                        <p class="card-text">Tipe: A-Frame Riverside Cabin</p>
+                        <p class="card-text">Harga: Rp. 1.429.000/Malam</p>                        
+                        <p class="card-text">Kapasitas: 2 orang</p>                                                
+                        <button class="btn btn-primary btn-detail">Detail</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="image-hover">
+                        <img src="assets/cabin2.1.jpg" class="card-img-top img-first">
+                        <img src="assets/Cabin2.2.jpg" class="card-img-top img-second">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Cabin Mountain View</h5>
+                        <p class="card-text">Tipe: Loft Family Cabin</p>
+                        <p class="card-text">Harga: Rp. 1.800.000/Malam</p>
+                        <p class="card-text">Kapasitas: 6 orang</p>
+                        <button class="btn btn-primary btn-detail">Detail</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="image-hover">
+                        <img src="assets/Cabin3.1.jpg" class="card-img-top img-first">
+                        <img src="assets/Cabin3.2.jpg" class="card-img-top img-second">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Cabin View Lembah</h5>
+                        <p class="card-text">Tipe: Valley View Cabin</p>
+                        <p class="card-text">Harga: Rp. 1.290.000/Malam</p>
+                        <p class="card-text">Kapasitas: 2 orang</p>
+                        <button class="btn btn-primary btn-detail">Detail</button>
+                    </div>
+                </div>
+            </div>                      
+        </div>
+     </div>
+
+    <!-- Form Tambah Daftar Cabin -->
+     <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card form-card">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4 text-center">Tambah Cabin Baru</h3>                        
+
+                        <div class="mb-3">
+                            <label class="form-label">Nama Cabin</label>
+                            <input type="text" class="form-control" placeholder="Masukkan nama cabin">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Harga / Malam</label>
+                            <input type="number" class="form-control" placeholder="Masukkan harga">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Kapasitas</label>
+                            <input type="number" class="form-control" placeholder="Masukkan kapasitas">
+                        </div>                        
+
+                        <div class="mb-4">
+                            <label class="form-label">Tipe Cabin</label>
+                            <select class="form-select">
+                                <option>Pilih Tipe Cabin</option>
+                                <option>A-Frame Cabin</option>
+                                <option>Loft Family Cabin</option>
+                                <option>Valley View Cabin</option>
+                            </select>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-dark btn-simpan">Simpan Cabin</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <!-- Footer -->
+     <footer class="footer-section mt-5">
+        <div class="container py-4">
+            <div class="row align-items-start text-center text-md-start">
+
+                <!-- Sebelah Kiri -->
+                <div class="col-md-4 mb-4">
+                    <h5>Lembayung Nirwana</h5>
+                    <p class="small">
+                        Tempat singgah bagi jiwa yang mencari ketenangan. Nikmati hangatnya senja di tengah alam yang syahdu
+                    </p>
+                </div>
+
+                <!-- di tengah -->
+                <div class="col-md-4 mb-4 text-center">
+                    <h5>Jam Operasional</h5>
+                    <p class="small mb-1">Check-in : 14.00 WIB</p>
+                    <p class="small">Check-out : 12.00 WIB</p>                    
+                </div>
+
+                <!-- Sebelah Kanan --> 
+                <div class="col-md-4 mb-4 text-md-end">
+                    <h5>Kontak Kami</h5>
+                    <p class="small mb-1">📍 Puncak Lembah Nirwana</p>
+                    <p class="small mb-1">📞 +62 812-3456-7890</p>
+                    <p class="small">✉ info@lembayungnirwana.id</p>                
+                </div>
+
+            </div>            
+        </div>    
+
+        <hr class="border-light">
+        <div class="text-center small">
+            © 2026 Lembayung Nirwana. All rights reserved.
+        </div>
+     </footer>
+    <!-- <footer class="bg-dark text-white text-center p-3">@ 2026 Sistem Manajemen Sepatu. All rights reserved.</footer> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
