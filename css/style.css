@@ -7,6 +7,26 @@ body{
     background-color: #3a2a1f;
 }
 
+.navbar .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
 .hero {
     height: 400px;
     background-image: url("../assets/background.png");
@@ -129,4 +149,212 @@ h3 {
 .footer-section p:hover {
     color: #ffffff;
     transition: 0.3s ease;
+}
+
+/* ============================================= */
+/* Dark Mode 🌙 
+/* ============================================= */
+
+body.dark-mode {
+    background-color: #1e1b18; /* lebih hangat, tidak terlalu hitam */
+    color: #e8e2d9;
+}
+
+Navbar
+body.dark-mode .navbar {
+    background-color: #2a231e;
+    border-bottom: 1px solid #3d332b;
+}
+
+/* Hero overlay */
+body.dark-mode .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35); /* lebih soft */
+}
+
+/* Heading */
+body.dark-mode h3 {
+    color: #f0e9e0;
+}
+
+/* Heading */
+body.dark-mode h1 {
+    color: white;
+}
+
+/* Dashboard Card - tetap sama karena diminta hanya card cabin */
+body.dark-mode .dashboard-card {
+    background: linear-gradient(145deg, #2f241d, #2a2019);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    border: 1px solid #3b2f26;
+}
+
+body.dark-mode .dashboard-card h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #e0b36d;
+    letter-spacing: 1px;
+}
+
+.btn-group-custom {
+    margin-top: 10px;
+}
+
+.btn-booking {
+    background: #2e7d32;
+    color: white;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-booking:hover {
+    background: #388e3c;
+    transform: translateY(-2px);
+}
+
+.btn-wishlist {
+    border: 1.5px solid #f4b400;
+    color: #f4b400;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-wishlist:hover {
+    background: #f4b400;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-wishlist.active {
+    background: white; /* lebih soft dari merah */
+    color: red;
+    border-color: #c97b63;
+}
+
+.btn-wishlist.active:hover {
+    background: #b46a54;
+    color: white;
+}
+
+/* ===== CABIN CARD - Soft Dark Mode ===== */
+body.dark-mode .card {
+    background: linear-gradient(145deg, #40362e, #382f27); /* lebih terang dari sebelumnya */
+    color: #eae3db;
+    border: 1px solid #5a4c41; /* border lebih terang untuk definisi */
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #4a3f36, #40362e); /* lebih terang saat hover */
+    border-color: #6b5b4e;
+}
+
+/* Card Title */
+body.dark-mode .card-title {
+    color: #f5eee7;
+    font-weight: 600;
+}
+
+/* Card Text */
+body.dark-mode .card-text {
+    color: #d9d0c7;
+}
+
+/* Harga (make stand out sedikit) */
+body.dark-mode .card-text strong,
+body.dark-mode .card-text b {
+    color: #e0b36d;
+    font-weight: 600;
+}
+
+/* Button Detail */
+body.dark-mode .btn-detail {
+    border: 1.5px solid #c9a76b; /* lebih soft dari sebelumnya */
+    color: #c9a76b;
+    background: transparent;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+body.dark-mode .btn-detail:hover {
+    background: #c9a76b;
+    color: #1e1b18;
+    border-color: #c9a76b;
+    transform: translateY(-2px);
+}
+
+/* Button Booking & Wishlist (jika ada) */
+body.dark-mode .btn-booking,
+body.dark-mode .btn-wishlist {
+    border-radius: 30px;
+    padding: 6px 18px;
+    transition: all 0.3s ease;
+}
+
+/* Booking Button */
+body.dark-mode .btn-booking {
+    background: #4a6b7a; /* soft blue-gray */
+    border: 1.5px solid #4a6b7a;
+    color: white;
+}
+
+body.dark-mode .btn-booking:hover {
+    background: #5f8294;
+    border-color: #5f8294;
+    transform: translateY(-2px);
+}
+
+/* Wishlist Button */
+body.dark-mode .btn-wishlist {
+    background: transparent;
+    border: 1.5px solid #b58a6b;
+    color: #b58a6b;
+}
+
+body.dark-mode .btn-wishlist:hover {
+    background: #b58a6b;
+    color: #1e1b18;
+    transform: translateY(-2px);
+}
+
+/* Badge/Tipe Cabin (jika ada) */
+body.dark-mode .badge-cabin {
+    background-color: #5a4c41;
+    color: #f0e9e0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Unit Tersedia dengan aksen soft */
+body.dark-mode .unit-tersedia {
+    color: #a3c4a8; /* soft green */
+    font-weight: 500;
+}
+
+/* Footer */
+body.dark-mode .footer-section {
+    background: linear-gradient(135deg, #201b17, #2a231e);
+    border-top: 1px solid #3d332b;
+}
+
+/* Modal */
+body.dark-mode .modal-content {
+    background: linear-gradient(145deg, #362e27, #2e2620);
+    color: #eae3db;
+    border: 1px solid #5a4c41;
+    border-radius: 16px;
+}
+
+body.dark-mode .list-group-item {
+    background-color: #2e2620;
+    border: 1px solid #4a3f36;
+    color: #eae3db;
 }
