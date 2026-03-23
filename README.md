@@ -7,6 +7,7 @@ NRP: 162023026
 Nama Project: Lambayung Nirwana <br>
 Deskripsi: Project ini merupakan Sistem Manajemen Penginapan dengan studi kasus pengelolaan cabin pada penginapan "Lembayung Nirwana"
 
-Terdapat penambahan fitur, yaitu fitur wishlist beserta booking.
+Terdapat penambahan fitur, yaitu fitur wishlist, booking, dan tema.
 - Wishlist: Pengguna dapat menambahkan cabin ke dalam daftar wishlist sebagai pilihan favorit.
 - Booking: Pengguna dapat melakukan pemesanan cabin, di mana jumlah unit tersedia akan otomatis berkurang setiap kali booking dilakukan.
+- Tema: bisa diubah menjadi dark mode atau light mode.
