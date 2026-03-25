@@ -27,6 +27,62 @@ body{
     width: 100%;
 }
 
+.login-btn {
+    background: white;
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #f1f1f1;
+}
+
+.user-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.user-toggle {
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.user-toggle:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.dropdown-menu-custom {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    min-width: 140px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 5px 0;
+    animation: fadeIn 0.2s ease;
+}
+
+.logout-item {
+    display: block;
+    padding: 10px;
+    color: red;
+    text-decoration: none;
+}
+
+.logout-item:hover {
+    background: #f5f5f5;
+}
+
 .hero {
     height: 400px;
     background-image: url("../assets/background.png");
@@ -166,7 +222,6 @@ body.dark-mode .navbar {
     border-bottom: 1px solid #3d332b;
 }
 
-/* Hero overlay */
 body.dark-mode .hero::after {
     content: "";
     position: absolute;
@@ -174,17 +229,15 @@ body.dark-mode .hero::after {
     background: rgba(0, 0, 0, 0.35); /* lebih soft */
 }
 
-/* Heading */
 body.dark-mode h3 {
     color: #f0e9e0;
 }
 
-/* Heading */
+
 body.dark-mode h1 {
     color: white;
 }
 
-/* Dashboard Card - tetap sama karena diminta hanya card cabin */
 body.dark-mode .dashboard-card {
     background: linear-gradient(145deg, #2f241d, #2a2019);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
@@ -238,7 +291,6 @@ body.dark-mode .dashboard-card h2 {
     color: white;
 }
 
-/* ===== CABIN CARD - Soft Dark Mode ===== */
 body.dark-mode .card {
     background: linear-gradient(145deg, #40362e, #382f27); /* lebih terang dari sebelumnya */
     color: #eae3db;
@@ -255,27 +307,23 @@ body.dark-mode .card:hover {
     border-color: #6b5b4e;
 }
 
-/* Card Title */
 body.dark-mode .card-title {
     color: #f5eee7;
     font-weight: 600;
 }
 
-/* Card Text */
 body.dark-mode .card-text {
     color: #d9d0c7;
 }
 
-/* Harga (make stand out sedikit) */
 body.dark-mode .card-text strong,
 body.dark-mode .card-text b {
     color: #e0b36d;
     font-weight: 600;
 }
 
-/* Button Detail */
 body.dark-mode .btn-detail {
-    border: 1.5px solid #c9a76b; /* lebih soft dari sebelumnya */
+    border: 1.5px solid #c9a76b;
     color: #c9a76b;
     background: transparent;
     transition: all 0.3s ease;
@@ -289,7 +337,6 @@ body.dark-mode .btn-detail:hover {
     transform: translateY(-2px);
 }
 
-/* Button Booking & Wishlist (jika ada) */
 body.dark-mode .btn-booking,
 body.dark-mode .btn-wishlist {
     border-radius: 30px;
@@ -297,9 +344,8 @@ body.dark-mode .btn-wishlist {
     transition: all 0.3s ease;
 }
 
-/* Booking Button */
 body.dark-mode .btn-booking {
-    background: #4a6b7a; /* soft blue-gray */
+    background: #4a6b7a; 
     border: 1.5px solid #4a6b7a;
     color: white;
 }
@@ -310,7 +356,6 @@ body.dark-mode .btn-booking:hover {
     transform: translateY(-2px);
 }
 
-/* Wishlist Button */
 body.dark-mode .btn-wishlist {
     background: transparent;
     border: 1.5px solid #b58a6b;
@@ -323,7 +368,6 @@ body.dark-mode .btn-wishlist:hover {
     transform: translateY(-2px);
 }
 
-/* Badge/Tipe Cabin (jika ada) */
 body.dark-mode .badge-cabin {
     background-color: #5a4c41;
     color: #f0e9e0;
@@ -333,19 +377,17 @@ body.dark-mode .badge-cabin {
     font-weight: 500;
 }
 
-/* Unit Tersedia dengan aksen soft */
 body.dark-mode .unit-tersedia {
-    color: #a3c4a8; /* soft green */
+    color: #a3c4a8; 
     font-weight: 500;
 }
 
-/* Footer */
 body.dark-mode .footer-section {
     background: linear-gradient(135deg, #201b17, #2a231e);
     border-top: 1px solid #3d332b;
 }
 
-/* Modal */
+
 body.dark-mode .modal-content {
     background: linear-gradient(145deg, #362e27, #2e2620);
     color: #eae3db;
