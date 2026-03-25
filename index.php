@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -13,6 +17,7 @@
 
     <!-- CSS Custom -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login-style.css">
 
     <!-- Javascript -->
     <script src="js/script.js" defer></script>
@@ -56,9 +61,33 @@
                         class="nav-link btn btn-sm ms-2">
                             🌙
                         </a>
-                    </li>
-            
+                    </li>        
                 </ul>
+
+                <!-- Login / Logout -->
+                <div class="user-menu ms-3">
+
+                <?php if (isset($_SESSION['username'])): ?>
+
+                    <!-- sudah login -->
+                    <div class="user-toggle" onclick="toggleMenu()">
+                        Halo, <?php echo htmlspecialchars($_SESSION['username']); ?>                        
+                    </div>
+
+                    <div class="dropdown-menu-custom" id="dropdownMenu">
+                        <a href="controller/logout.php" class="logout-item">Logout</a>
+                    </div>
+
+                <?php else: ?>
+
+                    <!-- belum login -->
+                    <a href="login.php" class="login-btn">
+                        Login
+                    </a>
+
+                <?php endif; ?>
+
+                </div>      
             </div>
         </div>
     </nav>
