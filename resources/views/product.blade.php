@@ -91,14 +91,6 @@
             </div>
         </div>
     </nav>
-    
-    <!-- Hero Section -->
-    <div class="hero text-center text-white d-flex align-items-center" id="home">
-        <div class="container">
-            <h1>Lembayung Nirwana</h1>
-            <p>Tempat singgah bagi jiwa yang mencari ketenangan</p>
-        </div>
-    </div>
 
     <!-- Dashboard -->
     <div class="container mt-5" id="dashboard">
@@ -130,29 +122,32 @@
         </div>
     </div>
 
-    <!-- Daftar Cabin -->
-    <div class="container mt-5" id="cabin">
+    <div class="container mt-5">
 
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-4">
 
-            <h3 class="m-0">Daftar Cabin</h3>
+            <h2 class="m-0">
+                Daftar Product Cabin
+            </h2>
 
-            <a href="{{ url('/products') }}"
+            <a href="{{ url('/') }}"
             class="btn btn-outline-dark rounded-pill">
 
-                Lihat Semua →
+                ← Kembali
             </a>
 
-        </div>        
+        </div>
 
+        <!-- Product Card -->
         <div class="row">
 
             @forelse($products as $product)
 
             <div class="col-md-4">
-                <div class="card mb-4">
+                <div class="card mb-4 shadow-sm">
 
+                    <!-- Gambar -->
                     <div class="image-hover">
                         <img src="{{ asset('assets/' . $product->gambar_1) }}"
                             class="card-img-top img-first">
@@ -161,49 +156,43 @@
                             class="card-img-top img-second">
                     </div>
 
+                    <!-- Body -->
                     <div class="card-body">
 
-                        <h5 class="card-title">
+                        <h4 class="card-title fw-bold">
                             {{ $product->nama_produk }}
-                        </h5>
+                        </h4>
 
-                        <p class="card-text">
-                            Kategori :
+                        <p class="card-text mb-2">
+                            <strong>Kategori :</strong>
                             {{ $product->category->nama_category }}
                         </p>
 
-                        <p class="card-text">
-                            Brand :
+                        <p class="card-text mb-2">
+                            <strong>Brand :</strong>
                             {{ $product->brand->nama_brand }}
                         </p>
 
-                        <p class="card-text">
-                            Harga :
+                        <p class="card-text mb-2">
+                            <strong>Harga :</strong>
                             Rp {{ number_format($product->harga, 0, ',', '.') }}/Malam
                         </p>
 
-                        <p class="card-text">
-                            Kapasitas :
-                            {{ $product->kapasitas }} orang
+                        <p class="card-text mb-3">
+                            <strong>Kapasitas :</strong>
+                            {{ $product->kapasitas }} Orang
                         </p>
 
-                        <div class="btn-group-custom">
+                        <!-- Button -->
+                        <div class="d-grid gap-2">
 
-                            <button class="btn btn-detail w-100 mb-2">
-                                Detail
+                            <button class="btn btn-dark">
+                                Detail Cabin
                             </button>
 
-                            <div class="d-flex gap-2">
-
-                                <button class="btn btn-success btn-booking">
-                                    Booking
-                                </button>
-
-                                <button class="btn btn-outline-warning btn-wishlist">
-                                    ⭐ Wishlist
-                                </button>
-
-                            </div>
+                            <button class="btn btn-outline-warning">
+                                ⭐ Wishlist
+                            </button>
 
                         </div>
 
@@ -214,14 +203,19 @@
             @empty
 
             <div class="col-12">
+
                 <div class="alert alert-warning text-center">
-                    Data cabin belum tersedia.
+
+                    Data product belum tersedia
+
                 </div>
+
             </div>
 
             @endforelse
 
         </div>
+
     </div>
 
     <!-- Modal wishlist -->
@@ -240,48 +234,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                     <button type="button" class="btn btn-danger" onclick="hapusWishlist()">Kosongkan</button>
-                </div>
-            </div>
-        </div>
-     </div>
-
-    <!-- Form Tambah Daftar Cabin -->
-     <div class="container mt-5 mb-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card form-card">
-                    <div class="card-body p-4">
-                        <h3 class="mb-4 text-center">Tambah Cabin Baru</h3>                        
-
-                        <div class="mb-3">
-                            <label class="form-label">Nama Cabin</label>
-                            <input type="text" class="form-control" placeholder="Masukkan nama cabin">
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Harga / Malam</label>
-                            <input type="number" class="form-control" placeholder="Masukkan harga">
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Kapasitas</label>
-                            <input type="number" class="form-control" placeholder="Masukkan kapasitas">
-                        </div>                        
-
-                        <div class="mb-4">
-                            <label class="form-label">Tipe Cabin</label>
-                            <select class="form-select">
-                                <option>Pilih Tipe Cabin</option>
-                                <option>A-Frame Cabin</option>
-                                <option>Loft Family Cabin</option>
-                                <option>Valley View Cabin</option>
-                            </select>
-                        </div>
-
-                        <div class="d-grid">
-                            <button class="btn btn-dark btn-simpan">Simpan Cabin</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -325,6 +277,7 @@
      </footer>
     <!-- <footer class="bg-dark text-white text-center p-3">@ 2026 Sistem Manajemen Sepatu. All rights reserved.</footer> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+     
 
 </body>
 </html>
