@@ -203,3 +203,25 @@ function toggleMenu() {
         menu.style.display = "block";
     }
 }
+
+// ================================================
+// PREVIEW IMAGE TAMBAH CABIN
+// ================================================
+
+function previewImage1(event)
+{
+    const preview = document.getElementById('preview1');
+
+    preview.src = URL.createObjectURL(event.target.files[0]);
+
+    preview.classList.remove('d-none');
+}
+
+function previewImage2(event)
+{
+    const preview = document.getElementById('preview2');
+
+    preview.src = URL.createObjectURL(event.target.files[0]);
+
+    preview.classList.remove('d-none');
+}

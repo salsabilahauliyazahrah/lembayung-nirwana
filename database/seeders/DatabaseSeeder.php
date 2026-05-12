@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
             BrandSeeder::class,
             ProductSeeder::class,
         ]);
+
+        $this->call(AdminSeeder::class);
     }
 }
