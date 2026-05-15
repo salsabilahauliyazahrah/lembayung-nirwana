@@ -4,11 +4,16 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\GoggleAuthController;
+use Illuminate\Support\Facades\Schema;
 
 Route::get('/', function () {
-    $products = Product::with(['category', 'brand'])
-        ->limit(3)
-        ->get();
+    $products = collect();
+    if (Schema::hasTable('products')) {
+        $products = Product::with(['category', 'brand'])
+            ->limit(3)
+            ->get();
+    }
     return view('index', compact('products'));
 })->name('home');
 
@@ -28,6 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/auth/google/redirect', [GoggleAuthController::class, 'redirect']);
+Route::get('/auth/google/callback', [GoggleAuthController::class, 'callback']);
 
 /*
 |--------------------------------------------------------------------------
